@@ -99,4 +99,14 @@ public class Automovil {
         return km/(capacidadEstanque*(porcentajeBencina/100f));
     }
 
+    @Override
+    public boolean equals(Object obj) {
+        Automovil a = (Automovil) obj;
+        System.out.println(" =========== " );
+        System.out.println("this.fabricante = " + this.fabricante);
+        System.out.println("a.getFabricante() = " + a.getFabricante());
+        System.out.println(" =========== " );
+
+        return (this.fabricante.equals(a.getFabricante()) && this.modelo.equals(a.getModelo()));
+    }
 }
