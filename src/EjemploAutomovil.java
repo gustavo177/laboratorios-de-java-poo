@@ -15,7 +15,6 @@ public class EjemploAutomovil {
         Automovil auto = new Automovil();
         Date fecha = new Date();
 
-
         System.out.println("son iguales? " + (nissan == nissan));
         System.out.println("son iguales con equals? " + (nissan.equals(nissan2)));
         System.out.println(subaru.verDetalle());

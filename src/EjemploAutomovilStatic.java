@@ -5,7 +5,6 @@ public class EjemploAutomovilStatic {
         subaru.setCilindrada(2.0);
         subaru.setColor(Color.BLANCO);
 
-        
         Automovil mazda = new Automovil("Mazda","BT-50",Color.ROJO, 3.0);
         System.out.println("mazda.leerFabricante() = " + mazda.getFabricante());
 
