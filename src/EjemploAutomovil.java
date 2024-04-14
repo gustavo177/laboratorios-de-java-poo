@@ -11,6 +11,8 @@ public class EjemploAutomovil {
 
         Automovil nissan = new Automovil("Nissan", "Navara", Color.GRIS, 3.5, 50);
         Automovil nissan2 = new Automovil("Nissan", "Navara", Color.GRIS, 3.5, 50);
+        Automovil nissan3 = new Automovil("Nissan", "Navara", Color.GRIS, 3.5, 50);
+
 
         Automovil auto = new Automovil();
         Date fecha = new Date();
