@@ -8,7 +8,6 @@ public class Rueda {
         this.aro = aro;
         this.ancho = ancho;
     }
-
     public String getFabricante() {
         return fabricante;
     }
