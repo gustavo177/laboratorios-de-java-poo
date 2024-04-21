@@ -6,7 +6,6 @@ public class Persona {
         this.nombre = nombre;
         this.apellido = apellido;
     }
-
     @Override
     public String toString() {
         return  nombre + apellido;
