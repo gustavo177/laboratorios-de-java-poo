@@ -2,7 +2,7 @@ public class Automovil {
     private int id;
     private String fabricante;
     private String modelo;
-    private Color  color = Color.GRIS;
+    private Color color = Color.GRIS;
     private Motor motor;
     private Estanque estanque;
     private Persona conductor;
@@ -11,14 +11,14 @@ public class Automovil {
     private static Color colorPatente = Color.NARANJO;
     private static int capacidadEstanqueEstatico = 30;
     private static int ultimoId;
-    public  static final Integer VELOCIDAD_MAX_CARRETERA = 120;
-    public  static final int VELOCIDAD_MAX_CIUDAD = 60;
+    public static final Integer VELOCIDAD_MAX_CARRETERA = 120;
+    public static final int VELOCIDAD_MAX_CIUDAD = 60;
 
-    public  static  final String COLOR_ROJO = "Rojo";
-    public  static  final String COLOR_AMARILLO = "Amarillo";
-    public  static  final String COLOR_AZUL = "Azul";
-    public  static  final String COLOR_BLANCO = "Blanco";
-    public  static  final String COLOR_GRIS = "Gris Oscuro";
+    public static final String COLOR_ROJO = "Rojo";
+    public static final String COLOR_AMARILLO = "Amarillo";
+    public static final String COLOR_AZUL = "Azul";
+    public static final String COLOR_BLANCO = "Blanco";
+    public static final String COLOR_GRIS = "Gris Oscuro";
 
     public Automovil() {
         this.id = ++ultimoId;
@@ -36,17 +36,17 @@ public class Automovil {
     }
 
     public Automovil(String fabricante, String modelo, Color color, Motor motor) {
-        this(fabricante,modelo,color);
+        this(fabricante, modelo, color);
         this.motor = motor;
     }
 
     public Automovil(String fabricante, String modelo, Color color, Motor motor, Estanque estanque) {
-        this(fabricante,modelo,color,motor);
+        this(fabricante, modelo, color, motor);
         this.estanque = estanque;
     }
 
     public Automovil(String fabricante, String modelo, Color color, Motor motor, Estanque estanque, Persona conductor, Rueda[] ruedas) {
-        this(fabricante,modelo,color,motor,estanque);
+        this(fabricante, modelo, color, motor, estanque);
         this.conductor = conductor;
         this.ruedas = ruedas;
     }
@@ -82,6 +82,7 @@ public class Automovil {
     public void setColor(Color color) {
         this.color = color;
     }
+
     public static Color getColorPatente() {
         return colorPatente;
     }
@@ -115,6 +116,9 @@ public class Automovil {
     }
 
     public Estanque getEstanque() {
+        if (estanque == null) {
+            this.estanque = new Estanque();
+        }
         return estanque;
     }
 
@@ -139,14 +143,18 @@ public class Automovil {
     }
 
     public String verDetalle() {
-        return "auto.id = " + this.id +
+        String detalle = "auto.id = " + this.id +
                 "\nauto.fabricante = " + this.getFabricante() +
-                "\nauto.modelo = " + this.getModelo() +
-                "\nauto.tipo = " + this.getTipo().getDescripcion() +
-                "\nauto.color = " + this.color +
-                "\nauto.colorPatente = " + colorPatente +
-                "\nauto.cilindrada = " + this.motor.getCilindrada();
-
+                "\nauto.modelo = " + this.getModelo();
+        if (this.getTipo() != null) {
+            detalle += "\nauto.tipo = " + this.getTipo().getDescripcion();
+        }
+        detalle += "\nauto.color = " + this.color +
+                "\nauto.colorPatente = " + colorPatente;
+        if (this.motor != null) {
+            detalle += "\nauto.cilindrada = " + this.motor.getCilindrada();
+        }
+        return detalle;
     }
 
     public String acelerar(int rpm) {
@@ -163,37 +171,37 @@ public class Automovil {
         return acelerar + "\n" + frenar;
     }
 
-    public float calcularConsumo(int km, float porcentajeBencina){
-        return km/(this.estanque.getCapacidad() * porcentajeBencina);
+    public float calcularConsumo(int km, float porcentajeBencina) {
+        return km / (this.getEstanque().getCapacidad() * porcentajeBencina);
     }
 
-    public float calcularConsumo(int km, int porcentajeBencina){
-        return km/(this.estanque.getCapacidad() * (porcentajeBencina/100f));
+    public float calcularConsumo(int km, int porcentajeBencina) {
+        return km / (this.getEstanque().getCapacidad() * (porcentajeBencina / 100f));
     }
 
-    public static float calcularConsumoEstatico(int km, int porcentajeBencina){
-        return km/(Automovil.capacidadEstanqueEstatico*(porcentajeBencina/100f));
+    public static float calcularConsumoEstatico(int km, int porcentajeBencina) {
+        return km / (Automovil.capacidadEstanqueEstatico * (porcentajeBencina / 100f));
     }
 
     @Override
     public boolean equals(Object obj) {
 
-        if(this == obj){
+        if (this == obj) {
             return true;
         }
 
-        if(!(obj instanceof  Automovil)){
+        if (!(obj instanceof Automovil)) {
             return false;
         }
 
         Automovil a = (Automovil) obj;
-        System.out.println(" =========== " );
+        System.out.println(" =========== ");
         System.out.println("this.fabricante = " + this.fabricante);
         System.out.println("a.getFabricante() = " + a.getFabricante());
-        System.out.println(" =========== " );
+        System.out.println(" =========== ");
 
         return (this.fabricante != null && this.modelo != null
-        && this.fabricante.equals(a.getFabricante()) && this.modelo.equals(a.getModelo()));
+                && this.fabricante.equals(a.getFabricante()) && this.modelo.equals(a.getModelo()));
     }
 
     @Override
