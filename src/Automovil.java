@@ -133,15 +133,12 @@ public class Automovil {
     public void setConductor(Persona conductor) {
         this.conductor = conductor;
     }
-
     public Rueda[] getRuedas() {
         return ruedas;
     }
-
     public void setRuedas(Rueda[] ruedas) {
         this.ruedas = ruedas;
     }
-
     public String verDetalle() {
         String detalle = "auto.id = " + this.id +
                 "\nauto.fabricante = " + this.getFabricante() +
