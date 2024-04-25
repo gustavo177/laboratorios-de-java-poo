@@ -133,12 +133,15 @@ public class Automovil {
     public void setConductor(Persona conductor) {
         this.conductor = conductor;
     }
+
     public Rueda[] getRuedas() {
         return ruedas;
     }
+
     public void setRuedas(Rueda[] ruedas) {
         this.ruedas = ruedas;
     }
+
     public String verDetalle() {
         String detalle = "auto.id = " + this.id +
                 "\nauto.fabricante = " + this.getFabricante() +
@@ -148,8 +151,20 @@ public class Automovil {
         }
         detalle += "\nauto.color = " + this.color +
                 "\nauto.colorPatente = " + colorPatente;
+
         if (this.motor != null) {
             detalle += "\nauto.cilindrada = " + this.motor.getCilindrada();
+        }
+
+        if(conductor != null){
+            detalle += "\nConductor subaru: " + this.getConductor();
+        }
+
+        if (getRuedas() != null) {
+            detalle += "\nRuedas del automóvil:";
+            for (Rueda r : this.getRuedas()) {
+                detalle += "\n"+r.getFabricante() + ", aro: " + r.getAro() + ", ancho: " + r.getAncho();
+            }
         }
         return detalle;
     }
