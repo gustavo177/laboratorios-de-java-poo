@@ -166,7 +166,6 @@ public class Automovil {
         }
         return detalle;
     }
-
     public String acelerar(int rpm) {
         return "el auto " + this.fabricante + " acelerando a " + rpm + "rpm";
     }
