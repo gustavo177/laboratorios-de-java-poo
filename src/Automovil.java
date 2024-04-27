@@ -7,6 +7,7 @@ public class Automovil {
     private Estanque estanque;
     private Persona conductor;
     private Rueda[] ruedas;
+    private int indiceRuedas;
     private TipoAutomovil tipo;
     private static Color colorPatente = Color.NARANJO;
     private static int capacidadEstanqueEstatico = 30;
@@ -22,6 +23,7 @@ public class Automovil {
 
     public Automovil() {
         this.id = ++ultimoId;
+        this.ruedas = new Rueda[5];
     }
 
     public Automovil(String fabricante, String modelo) {
@@ -142,6 +144,12 @@ public class Automovil {
         this.ruedas = ruedas;
     }
 
+    public Automovil addRueda(Rueda rueda){
+        if(indiceRuedas < this.ruedas.length){
+            this.ruedas[indiceRuedas++] = rueda;
+        }
+        return this;
+    }
     public String verDetalle() {
         String detalle = "auto.id = " + this.id +
                 "\nauto.fabricante = " + this.getFabricante() +
