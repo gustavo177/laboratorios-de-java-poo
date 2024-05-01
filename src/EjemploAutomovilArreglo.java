@@ -37,7 +37,6 @@ public class EjemploAutomovilArreglo {
         Automovil audi = new Automovil("Audi", "A3");
         audi.setConductor((new Persona("Jano", "Pérez")));
 
-
         Automovil[] autos =  new Automovil[5];
         autos[0] = subaru;
         autos[1] = mazda;
