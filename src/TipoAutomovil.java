@@ -18,6 +18,7 @@ public enum TipoAutomovil {
         this.descripcion = descripcion;
     }
 
+
     public String getNombre() {
         return nombre;
     }
