@@ -22,6 +22,7 @@ public class OrdenCompra {
     public Date getFecha() {
         return fecha;
     }
+
     public Cliente getCliente() {
         return cliente;
     }
