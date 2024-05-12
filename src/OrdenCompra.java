@@ -47,6 +47,19 @@ public class OrdenCompra {
             System.out.println("No se pueden agregar más productos, la orden está llena.");
         }
     }
+
+//  Método para calcular el gran total
+    public double calcularGranTotal() {
+        double granTotal = 0.0;
+        for (Producto producto : productos) {
+            if (producto != null) {
+                granTotal += producto.getPrecio();
+            }
+        }
+        return granTotal;
+    }
+
+
 }
 
 class Cliente {
@@ -54,5 +67,11 @@ class Cliente {
 }
 
 class Producto {
-    // Atributos y métodos de la clase Producto
+    private double precio;
+
+    // Constructor, getters y setters para la clase Producto
+
+    public double getPrecio() {
+        return precio;
+    }
 }
