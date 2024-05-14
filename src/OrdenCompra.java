@@ -65,12 +65,12 @@ class Cliente {
     // Atributos y métodos de la clase Cliente
 }
 
-class Producto {
-    private double precio;
-
-    // Constructor, getters y setters para la clase Producto
-
-    public double getPrecio() {
-        return precio;
-    }
-}
+//class Producto {
+//    private double precio;
+//
+//    // Constructor, getters y setters para la clase Producto
+//
+//    public double getPrecio() {
+//        return precio;
+//    }
+//}
