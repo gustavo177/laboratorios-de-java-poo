@@ -61,9 +61,9 @@ public class OrdenCompra {
 
 }
 
-class Cliente {
-    // Atributos y métodos de la clase Cliente
-}
+//class Cliente {
+//    // Atributos y métodos de la clase Cliente
+//}
 
 //class Producto {
 //    private double precio;
