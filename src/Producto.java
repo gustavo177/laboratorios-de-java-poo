@@ -8,4 +8,16 @@ public class Producto {
         this.nombre = nombre;
         this.precio = precio;
     }
+
+    public String getFabricante() {
+        return fabricante;
+    }
+
+    public String getNombre() {
+        return nombre;
+    }
+
+    public int getPrecio() {
+        return precio;
+    }
 }
