@@ -17,6 +17,7 @@ public class EjemploOrdenes {
                 new Producto("Producto 1D", "Fabricante 1", 25)
         };
 
+
         // Agregar productos a las órdenes
         for (Producto producto : productosOrden1) {
             orden1.addProducto(producto);
